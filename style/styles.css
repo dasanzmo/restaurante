@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --primary: #F5F1DE;
+    --secondary: #F9902F;
+    --text: #29272D;
+    --white: #FFFFFF;
+    --black: #000000;
+    --font-primary: 'Outfit', sans-serif;
+    --font-secondary: 'Ultra', sans-serif;
+}
+
+@keyframes animation-img-banner {
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+    transition: all .2s ease-in;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =============================================
+ESTILOS ESCRITORIO GENERALES 1366PX EN ADELANTE
+============================================= */
+
+/* CABECERA */
+header.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 10px;
+    top: 0;
+    left: 0;
+}
+
+header.header .cont-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header.header .cont-logo img {
+    width: 70px;
+}
+
+header.header .cont-logo p {
+    font-family: var(--font-secondary);
+    color: var(--text);
+}
+
+/* NAVBAR */
+.header .nav-bar a {
+    color: var(--text);
+    padding: 3px 10px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.header .nav-bar a:hover {
+    color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+.navbar-mobile {
+    display: none;
+}
+
+/* BANNER */
+.banner {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 40%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.banner .banner-cont {
+    width: fit-content;
+}
+
+.banner .banner-cont h2 {
+    font: 100px;
+    font-family: var(--font-secondary);
+    font-weight: inherit;
+}
+
+.banner .banner-cont h3 {
+    font-size: 50px;
+    font-family: var(--font-secondary);
+    font-weight: inherit;
+    margin-bottom: 20px;
+}
+
+.banner .banner-cont p {
+    color: var(--text);
+    font-size: 18px;
+    width: 600px;
+    margin-bottom: 40px;
+}
+
+.banner .banner-img img {
+    max-width: 700px;
+    width: 90%;
+    border-radius: 50%;
+    animation: animation-img-banner 20s ease-in-out infinite;
+}
+
+.banner .banner-cont .btn-home {
+    background: var(--secondary);
+    border: 1px solid var(--secondary);
+    padding: 10px 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text);
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+.banner .banner-cont .btn-home:hover {
+    background: transparent;
+    border: 1px solid var(--text);
+}
+
+
+/* =============================================
+ESTILOS MOVILES GENERALES 1366PX EN ADELANTE
+============================================= */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--primary);
+    }
+
+    .header .nav-bar {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: block;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background: var(--text);
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 999;
+    }
+
+    .navbar-mobile a {
+        width: 45px;
+        height: 45px;
+        color: var(--secondary);
+        padding: 3px 10px;
+        font-weight: bold;
+        font-size: 25px;
+        margin: 10px;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid var(--text);
+    }
+
+    .navbar-mobile a:hover {
+        border: 1px solid var(--secondary);
+    }
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding-top: 150px;
+        overflow: hidden;
+    }
+
+    .banner .banner-cont {
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 50px;
+    }
+
+    .banner .banner-cont h2 {
+        font-size: 25px;
+    }
+
+    .banner .banner-cont h3 {
+        font-size: 40px;
+    }
+
+    .banner .banner-cont p {
+        width: auto;
+    }
+
+    .banner .banner-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .banner .banner-img img {
+        width: 70%;
+    }
+}
